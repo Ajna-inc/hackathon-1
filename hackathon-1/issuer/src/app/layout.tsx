@@ -5,6 +5,9 @@ import {Inter, Poppins} from 'next/font/google'
 import Chakra from "@/Providers/Chakra";
 import Navbar from "@/components/main/Navbar";
 import { Box } from "@chakra-ui/react";
+import Sidebar from "@/components/main/Sidebar";
+import SidebarWrapper from "@/components/main/SidebarWrapper";
+import GlobalVariableContext from "@/contexts/GlobalVariableContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,9 +37,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.className}`}>
         <Chakra>
-          <Box mt={'70.5px'}>
+          <Box mt={'100px'}>
             <Navbar/>
-            {children}
+            <GlobalVariableContext>
+              <SidebarWrapper>
+                {children}
+              </SidebarWrapper>
+            </GlobalVariableContext>
           </Box>
         </Chakra>
       </body>

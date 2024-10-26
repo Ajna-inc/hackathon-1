@@ -1,5 +1,6 @@
 'use client'
 
+import HomePage from "@/components/main/HomePage";
 import AcceptPage from "@/components/modals/accept";
 import IssuePage from "@/components/modals/issue";
 import { Box, Button, Input, Text, VStack } from "@chakra-ui/react";
@@ -10,7 +11,7 @@ export default function Home() {
   const [togglePage,setTogglePage]=useState(false)
   return (
     <>
-      {
+      {/* {
         !togglePage?
         <AcceptPage toggleBtn={()=>{
           setTogglePage(!togglePage)
@@ -18,7 +19,8 @@ export default function Home() {
         <IssuePage toggleBtn={()=>{
           setTogglePage(!togglePage)
         }}/>
-      }
+      } */}
+      <HomePage/>
     </>
   );
 }
